@@ -1,0 +1,37 @@
+# The train/test net protocol buffer definition
+
+net: "./examples/Similar_Lenet5_mnist/BinaryNet_train_test.prototxt"
+
+test_iter: 100
+test_interval: 1000 
+
+# The base learning rate, momentum and the weight decay of the network.
+base_lr: 0.001
+momentum: 0.9  
+
+weight_decay: 0.0001
+regularization_type: "Binary L2"  
+
+# The learning rate policy
+lr_policy: "step"
+gamma: 0.977
+stepsize: 1000
+
+# Display every 100 iterations
+display: 100
+
+# The maximum number of iterations
+max_iter: 350000                   # num_epochs = 350
+
+# snapshot intermediate results
+snapshot: 10000
+
+snapshot_prefix: "./examples/Similar_Lenet5_mnist/model/BinaryNet"
+# solver mode: CPU or GPU
+solver_mode: GPU
+
+momentum2: 0.999
+type: "Adam"
+
+# If true, run an initial test pass before the first iteration.
+test_initialization: false  
